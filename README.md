@@ -31,6 +31,14 @@ Click the image below to watch the demo video:
 
 [![Demo Video](thumb.jpg)](https://vimeo.com/1024504337)
 
+## Collaborators
+This project was developed collaboratively by:
+
+- [Asal, me:) ](https://github.com/AsalSaud)
+- [Collaborator's Name](https://github.com/collaboratorusername)
+
+We equally contributed to all aspects of the project, including the deep learning model, web development, and data processing.
+
 
 
 
