@@ -14,6 +14,9 @@ This project is a deep learning-based application designed to detect various ski
 - **Programming Language**: Python
 - **Deep Learning Framework**: TensorFlow
 - **Image Processing**: OpenCV
+- **Web Framework**: Flask
+- **Front-End Technologies**: HTML, CSS, JavaScript
+- **Data Handling Techniques**: SMOTE
 - **Development Environment**: Visual Studio code
 - 
 
