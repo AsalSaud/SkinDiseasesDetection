@@ -27,7 +27,10 @@ The MobileNetV1 model was evaluated using the following metrics:
 Results show that the model performs well in identifying various skin diseases.
 
 ## Demo
-[Click here to view the demo video](SDDDemo.mp4)
+Click the image below to watch the demo video:
+
+[![Demo Video](https://your-thumbnail-url.jpg)]([https://vimeo.com/YOUR_VIDEO_ID](https://vimeo.com/1024504337)
+
 
 
 
