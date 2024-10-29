@@ -18,6 +18,6 @@ This project is a deep learning-based application designed to detect various ski
 - **Front-End Technologies**: HTML, CSS, JavaScript
 - **Data Handling Techniques**: SMOTE
 - **Development Environment**: Visual Studio code
-- 
+
 
 
