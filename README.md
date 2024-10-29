@@ -19,5 +19,10 @@ This project is a deep learning-based application designed to detect various ski
 - **Data Handling Techniques**: SMOTE
 - **Development Environment**: Visual Studio code
 
+## Result
+The MobileNetV1 model was evaluated using ![Confusion Matrix](Confusion matrix.png)
+. Results show that the model performs well in identifying various skin diseases.
+
+
 
 
