@@ -29,7 +29,7 @@ Results show that the model performs well in identifying various skin diseases.
 ## Demo
 Click the image below to watch the demo video:
 
-[![Demo Video](https://your-thumbnail-url.jpg)]([https://vimeo.com/YOUR_VIDEO_ID](https://vimeo.com/1024504337)
+[![Demo Video](thumb.jpg)](https://vimeo.com/1024504337)
 
 
 
