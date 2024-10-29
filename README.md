@@ -34,7 +34,7 @@ Click the image below to watch the demo video:
 ## Collaborators
 This project was developed collaboratively by:
 
-- [Asal, me:) ](https://github.com/AsalSaud)
+- [Asal (me) ](https://github.com/AsalSaud)
 - [Collaborator's Name](https://github.com/collaboratorusername)
 
 We equally contributed to all aspects of the project, including the deep learning model, web development, and data processing.
