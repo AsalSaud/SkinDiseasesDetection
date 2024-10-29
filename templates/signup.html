@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- header design -->
+    <header class="header" style="background-color: #070730; color: #fff;">
+        <a href="{{ url_for('index') }}" class="logo">Skin Disease Detection<span class="animate" style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon" style="color: #fff;"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}"class="active">Home</a>
+            {% if 'user_id' in session %}
+            <a href="{{ url_for('view_history') }}">View History</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+
+    </header>
+
+    <section class="home show-animate" id="home" style="background-color: #bf55ec;">
+        <div class="home-imgHover"></div>
+    </section>
+
+<!-- Signup Box -->
+<div class="signup-box">
+    <h2>Sign Up</h2>
+        <form method="POST" action="{{ url_for('signup') }}">
+        <div>
+            <!-- Error Message -->
+            {% if error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Username Field -->
+            <div class="input-field">
+                <input type="text" name="username" placeholder="Username" value="{{ request.form.username }}">
+            </div>
+
+            <!-- Email Field -->
+            <div class="input-field">
+                <input type="email" name="email" placeholder="Email" value="{{ request.form.email }}">
+            </div>
+
+            <!-- Date of Birth Field -->
+            <div class="input-field">
+                <input type="date" name="dob" value="{{ request.form.dob }}">
+            </div>
+
+            <!-- Sex Field -->
+            <div class="input-field">
+                <select name="sex">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Choose a Password">
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="input-field">
+                <input type="password" name="confirmPassword" placeholder="Confirm Password">
+            </div>
+
+            <div class="btn-box2">
+                <button type="submit">Sign Up</button>
+            </div>
+    
+            <div class="separator"></div>
+    
+            <div class="additional-links">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

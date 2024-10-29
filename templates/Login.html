@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection</title>
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- header design -->
+    <header class="header" style="background-color: #070730; color: #fff;">
+        <a href="{{ url_for('index') }}" class="logo">Skin Disease Detection<span class="animate" style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon" style="color: #fff;"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="active">Home</a>
+            {% if 'user_id' in session %}
+            <a href="{{ url_for('view_history') }}">View History</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+
+    </header>
+
+    <section class="home show-animate" id="home" style="background-color: #bf55ec;">
+        <div class="home-imgHover"></div>
+    </section>
+
+<!-- Login Box -->
+<div class="login-box">
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method="POST">
+        <div>
+             <!-- Error Message -->
+             {% if error %}
+             <div class="error-message">
+                 <p>{{ error }}</p>
+             </div>
+             {% endif %}
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="Username" value="{{ request.form.username }}">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            
+            <div class="btn-box2">
+                <button class="login-button" type="submit">Login</button>
+            </div>
+            
+
+            <div class="separator"></div>
+
+            <div class="additional-links" style="margin-top: 20px; font-size: 1.4em; text-align: center;">
+                <p style="margin: 0; display: inline-block;">Don't have an account? <a href="{{ url_for('signup') }}" >Sign Up</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body class="page-detect">
+
+    <!-- header design -->
+    <header class="header" style="background-color: #070730; color: #fff;">
+        <a href="{{ url_for('index') }}" class="logo">Skin Disease Detection<span class="animate" style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon" style="color: #fff;"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}" class="active">Home</a>
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+
+    </header>
+
+    <section class="home show-animate" id="home" style="background-color: #bf55ec;">
+
+
+        <div class="home-imgHover"></div>
+
+<!-- View History Box -->
+{% if detections %}
+<div class="history-box">
+    <main>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h2>Recent Skin Reports</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Date</th> 
+                            <th>Disease</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for detection in detections %}
+                        <tr>
+                            <td><img src="{{ url_for('static', filename=detection.image_path) }}" alt="Skin Detection"></td>
+                            <td>{{ detection.upload_date.strftime('%Y-%m-%d') }}</td> 
+                            <td class="pending">{{ detection.disease }}</td>
+                            <td>{{ "%.2f"|format(detection.accuracy) }} %</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </main>
+</div>
+{% else %}
+<div class="history-box">
+    <main>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h2>Recent Skin Reports</h2>
+                </div>
+                <div class="no-records">
+                    <i class='bx bx-info-circle' style="font-size: 2em; margin-right: 10px;"></i>
+                    <p style="font-size: 1.5em;">No records found.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endif %}
+
+    </section>
+
+  
+    <!-- footer design -->
+    <footer class="footer" style="background-color: #8e44ad; color: #ecf0f1;">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 | Skin Disease Detection | All Rights Reserved</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
