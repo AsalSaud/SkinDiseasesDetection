@@ -34,8 +34,9 @@ Click the image below to watch the demo video:
 ## Collaborators
 This project was developed collaboratively by:
 
-- [Asal](https://github.com/AsalSaud)
-- [Raghad](https://github.com/Raghad-Alahmadi)
+| [<img src="https://github.com/AsalSaud.png?size=100" width="100" height="100">](https://github.com/AsalSaud) | [<img src="https://github.com/Raghad-Alahmadi.png?size=100" width="100" height="100">](https://github.com/Raghad-Alahmadi) |
+| --- | --- |
+| [Asal](https://github.com/AsalSaud) | [Raghad](https://github.com/Raghad-Alahmadi) |
 
 We equally contributed to all aspects of the project, including the deep learning model, web development, and data processing.
 
